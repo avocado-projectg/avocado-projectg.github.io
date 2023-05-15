@@ -9,15 +9,21 @@
     <meta name="generator" content="Hand-Made">
 
     <title>Project-G</title>
-
-    <!--
-    <link rel="stylesheet" type="text/css" href="testCSS.css">
-    <script src="jQuery.js"></script>
-    -->
-
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
+    </script>
+    <script>
+      $(document).ready(function () {
+        $.getJSON("bmstable.json",function (data){
+          data.forEach(function (obj){
+            let row="<tr> <td>"+obj.Title+"</td> <td>"+obj.Year+"</td> <td>"+obj.Genre+"</td> <td>"+obj.Alias+"</td> <td>"+obj.Format+ "</td> <td><a href=\""+obj.Link+"\">Download</a></td> </tr>";
+            $("#mytable>tbody").append(row);
+          })
+        });
+      });
+    </script>
     <style type="text/css">
       #page{
-        max-width:500px;
+        max-width:800px;
         margin:auto;
         border:0px;
       }
@@ -45,7 +51,7 @@
         padding: 20px 0px;
       }
       #content{
-        width: 500px;
+        width: 800px;
         font-size: small;
       }
       table{
@@ -59,99 +65,9 @@
         border-bottom: 1px solid black;
       }
     </style>
-
-    <script>
-      function addFooter() {
-        document.write("<footer class=\"articleFooter\"><hr/></footer>");
-      }
-    </script>
-
   </head>
 
   <body>
-    <!--
-    <h1>ProjectG</h1>
-    <h2>Whatever</h2>
-    <h3>Whatever</h3>
-    <h4>Whatever</h4>
-    <h5>Whatever</h5>
-    <h6>Whatever</h6>
-<script>
-  document.write(Date());
-</script></br>
-
-
-    <a href="http://www.google.com/">
-    <img src="logo.jpg" alt="Artist Logo" width=400 />
-    </a>
-    <form class="center">
-      Code:<input type="password">
-      <input type="Submit" value="一键点赞">
-    </form>
-
-
-<script>
-  const HelloVueApp = {
-    data() {
-      return {
-        message: 'Hello Vue!!'
-      }
-    }
-  }
-
-  Vue.createApp(HelloVueApp).mount('#hello-vue')
-</script>
-
-    <p id="test" class="left">321321</p>
-    <script>
-      function myFunction(){
-        var y=document.getElementById("test");
-        if (y.innerText=="321321"){
-          y.innerText="44444";
-          y.className="center";
-        }
-        else {
-          y.innerText="321321";
-          y.className="left";
-      }
-    }
-    </script>
-    <button type="button" onmouseover="myFunction()" onmouseout="myFunction()">一键计算2^64</button>
-    <p>ProjectG<br>
-      <script src="myScript.js"></script><br>
-<strong>diverse system</strong> PSYCHEDELIC CHALLENGE Thought<br>
-<ul>
-<li>diverse system AD:PSYCHEDELIC 癲癇</li>
-<li>wavforme WAVES Remixes Colosseum (Project-G Remix)</li>
-<li>Notebook Records STORYTELLER VOLUME 2 Legend of the Lycanthrope</li>
-</ul>
-diverse system works.9 Whipped Cream<br>
-Puru ShadowGale Remixes ShadowGale "Pro-Gressive Remix"<br>
-diverse system AD:Drum’n Bass 4 Choke<br>
-diverse system AD:TECHNO 4 Awakening<br>
-diverse system sens()rium:beatless Protogalaxy<br>
-Omniset Records Behind The Dusk<br>
-diverse system works.after Meringue<br>
-diverse system works.10 Shell<br>
-diverse system 24/7 -works. for stream vol.1- Trefoil<br>
-diverse system works.11 Boundary<br>
-<br>
-_<br>
-photosphere the Core Mechanism Standardized Impermanence<br>
-CLIP SOUNDS S**t Genre Vol. 2 Rust<br>
-疯帽子茶会 千年战争～iek loin staim haf il dis o-del al 革命机<br>
-Structure Sound Cyber Collapse Vol.2 ____wherever<br>
-      Art of Heart Heart Essence Mud
-    
-      <div style="color:#0000FF">
-        <h3>这是一个在 div 元素中的标题。</h3>
-        <p>这是一个在 div 元素中的文本。
-        This is a UTF-8 Test: &#128517;&#128517;&#128517;</p>
-        <p>Happy <span>SpanSpan</span></p>
-      </div>
-
-    -->
-
     <div id="page">
       <header>
         <div class="header" >
@@ -170,91 +86,43 @@ Structure Sound Cyber Collapse Vol.2 ____wherever<br>
         <article id="about">
           <h1><a herf="#about">ABOUT</a></h1>
           <p>インターネットの一隅に生きてる或る人。「psychedelic challenge」の公募合格に伴い、音楽活動を徐々に開始。現在、同人音楽など多様な音楽活動をしている。幾多の無機質な「音」から様々な可能性を模索し続けている。</p>
-          <script>addFooter()</script>
         </article>
         
         <article id="works">
           <h1><a herf="#works">WORKS</a></h1>
-          <p>
-            TBA<br>
-            <script>
-              for (let i = 0; i < 9; i++) document.write("A quick brown fox jumps over the lazy dog.")
-            </script>
-          </p>
-          <script>addFooter()</script>
+            <h2><a herf="teikou">RELEASE</a></h2>
+            <p>
+              Single: Behind the dusk Omniset Records 2020<br>
+              EP: Irrelevance Omniset Records 2023<br>
+            </p>
+            <h2><a herf="teikou">提供</a></h2>
+            <p>
+              音ゲー TBA<br>
+              art of heart, wavforme, diverse system など多数<br>
+            </p>
         </article>
 
-        <article id="BMS Download">
-          <h1><a herf="download">BMS Download</a></h1>
-          <table id="bmstable">
-            <tr>
-              <th>Title</th>
-              <th>Genre</th>
-              <th>Format</th>
-              <th>Link</th>
-            </tr>
-            <tr>
-              <td>Corona</td>
-              <td>Trance</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1HWh6HSiGv6VK90uMJzH5NKp3iRUa9BSq/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>Midnight Flux</td>
-              <td>Midnight Liquid Juke</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1ulImKUntbH6ijGmEkxcHdi_-jbLDGtY8/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>The Sundering</td>
-              <td>Upheaval</td>
-              <td>WAV+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1QLJBDgQUGa4vruaX1J7Z_y56dnkqz9s3/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>Theme</td>
-              <td>G-Bass</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1UwV41iitTwYYKFVi46aL0uB2q_QyO3Yz/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>Aliens are BAD!</td>
-              <td>Nan-Madol Festival</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1BYAf3vhy2bTpxRxbrpsogoUXlerH0w8o/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>Fake Life</td>
-              <td>FAKE SKOOL TECHSTEP</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1l9o1Lk1d1szPQNjWqHWeMK9k5OxlZwo0/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>The Observer</td>
-              <td>absurd crossbreed</td>
-              <td>OGG+WMV</td>
-              <td><a href="https://drive.google.com/file/d/1ZqQRMp1k-yJ0Kc1rdiiFMb2XNgNAUMHC/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>G-Bass</td>
-              <td>ProjectG</td>
-              <td>WAV</td>
-              <td><a href="https://drive.google.com/file/d/17ShF1V9XyKI1X67axqf3a7DuBBVa2a21/view?usp=sharing">Download</a></td>
-            </tr>
-            <tr>
-              <td>Midnight Flux?</td>
-              <td>ASMR</td>
-              <td>WAV</td>
-              <td><a href="https://drive.google.com/file/d/1bUeCtEgwJ9jdRWSuu8AZysbWZiFUJ_dT/view?usp=sharing">Download</a></td>
-            </tr>
-          </table>
-          <script>addFooter()</script>
+        <article id="BMS Archive">
+          <h1><a herf="download">BMS Archive</a></h1>
+          <div id="bmstable">
+            <table id="mytable">
+              <tbody>
+                <tr>
+                  <th>Title</th>
+                  <th>Year</th>
+                  <th>Genre</th>
+                  <th>Alias</th>
+                  <th>Format</th>
+                  <th>Link</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
 
         <article id="contact">
           <h1><a herf="contact">Contact</a></h1>
           <p><a href="mailto:zako_g@outlook.com">Email</a></p>
-          <script>addFooter()</script>
         </article>
 
       </div>
@@ -262,8 +130,4 @@ Structure Sound Cyber Collapse Vol.2 ____wherever<br>
       <footer>-</footer>
     </div>
   </body>
- 
-
-
-
 </html>
