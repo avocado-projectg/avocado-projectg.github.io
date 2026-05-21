@@ -1,36 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..700&display=block");
+
+body {
+    color: #444444;
+    font-family: "Google Sans Flex", Arial, sans-serif;
+}
+
 #page {
     max-width: 800px;
-    margin: 24px 16px 24px clamp(16px, 12vw, 160px);
+    margin: 48px 16px 24px clamp(16px, 12vw, 160px);
     border: 0px;
 }
 
-hr {
-    border: 1 black;
-}
-
-.header {
-    background-color: rgba(180, 180, 180, 0.6);
-    position: fixed;
-    right: 200px;
-}
-
-.header ul {
-    list-style-type: none;
-}
-
-.header li {
-    display: inline;
-}
-
-.header a {
-    color: black;
-    text-decoration: none;
-    padding: 0px 0px;
-}
-
-.articleFooter {
-    height: 40px;
-    padding: 20px 0px;
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    color: #444444;
 }
 
 #content {
@@ -41,7 +27,7 @@ hr {
 
 #content h1 {
     font-size: 1.2em;
-    line-height: 1.4;
+    line-height: 2.8;
     margin: 1.6em 0 0.7em;
 }
 
@@ -55,6 +41,26 @@ hr {
     margin: 0 0 1em;
 }
 
+footer {
+    margin-top: 1.6em;
+    max-width: 800px;
+    text-align: right;
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-list li {
+    margin: 0 0 1em;
+}
+
+.work-list h2 {
+    margin-bottom: 0;
+}
+
 
 .social-links {
     display: flex;
@@ -66,9 +72,9 @@ hr {
 
 .social-link {
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #444444;
     border-radius: 50%;
-    color: black;
+    color: #444444;
     display: inline-flex;
     height: 36px;
     justify-content: center;
@@ -78,42 +84,12 @@ hr {
 
 .social-link:hover,
 .social-link:focus {
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: #444444;
 }
 
 .social-icon {
-    fill: none;
+    display: block;
     height: 22px;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.8;
     width: 22px;
-}
-
-.social-icon circle {
-    fill: none;
-}
-
-.sr-only {
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-table {
-    border-collapse: collapse;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-th,
-td {
-    text-align: center;
-    padding: 1px 12px;
-    border-bottom: 1px solid black;
 }
