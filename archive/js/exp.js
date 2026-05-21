@@ -1,8 +1,6 @@
-
 //先不考虑括号、乘方，只计算加减乘
 
 function eqExp(str) {
-
     function symLevel(_sym) {
         switch (_sym) {
             case '*': return 1
@@ -88,4 +86,4 @@ function eqExp(str) {
 
 console.log(eqExp("355+44*56-63"))
 let testStr = "abc"
-console.log(testStr.substring(0,testStr.length-1))
+console.log(testStr.substring(0, testStr.length - 1))

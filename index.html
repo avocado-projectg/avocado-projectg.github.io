@@ -1,133 +1,169 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
+	<head>
+		<meta charset="UTF-8" />
 
-    <meta name="author" content="Project-G">
-    <meta name="keywords" content="Project-G, BMS, Doujin Music">
-    <meta name="description" content="Homepage of Project-G">
-    <meta name="generator" content="Hand-Made">
+		<meta name="author" content="Project-G" />
+		<meta name="keywords" content="Project-G, BMS, Doujin Music" />
+		<meta name="description" content="Homepage of Project-G" />
+		<meta name="generator" content="Hand-Made" />
 
-    <title>Project-G</title>
-    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js">
-    </script>
-    <script>
-      $(document).ready(function () {
-        $.getJSON("bmstable.json",function (data){
-          data.forEach(function (obj){
-            let row="<tr> <td>"+obj.Title+"</td> <td>"+obj.Year+"</td> <td>"+obj.Genre+"</td> <td>"+obj.Alias+"</td> <td>"+obj.Format+ "</td> <td><a href=\""+obj.Link+"\">Download</a></td> </tr>";
-            $("#mytable>tbody").append(row);
-          })
-        });
-      });
-    </script>
-    <style type="text/css">
-      #page{
-        max-width:800px;
-        margin:auto;
-        border:0px;
-      }
-      hr{
-        border:1 black;
-      }
-      .header{
-        background-color: rgba(180, 180, 180, 0.6);
-        position: fixed;
-        right: 200px;
-      }
-      .header ul{
-        list-style-type: none;
-      }
-      .header li{
-        display: inline;
-      }
-      .header a{
-        color:black;
-        text-decoration: none;
-        padding: 0px 0px;
-      }
-      .articleFooter{
-        height: 40px;
-        padding: 20px 0px;
-      }
-      #content{
-        width: 800px;
-        font-size: small;
-      }
-      table{
-        border-collapse: collapse;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-      }
-      th, td{
-        text-align: center;
-        padding: 1px 12px;
-        border-bottom: 1px solid black;
-      }
-    </style>
-  </head>
+		<title>Project-G</title>
+		<link href="css/main.css" rel="stylesheet" />
+		<!-- <script>
+			$(document).ready(function () {
+				$.getJSON('data/bmstable.json', function (data) {
+					data.forEach(function (obj) {
+						let row =
+							'<tr> <td>' +
+							obj.Title +
+							'</td> <td>' +
+							obj.Year +
+							'</td> <td>' +
+							obj.Genre +
+							'</td> <td>' +
+							obj.Alias +
+							'</td> <td>' +
+							obj.Format +
+							'</td> <td><a href="' +
+							obj.Link +
+							'">Download</a></td> </tr>';
+						$('#mytable>tbody').append(row);
+					});
+				});
+			});
+		</script> -->
+	</head>
 
-  <body>
-    <div id="page">
-      <header>
-        <div class="header" >
-          <nav>
-            <ul>
-              <li><a href="#about">ABOUT</a></li>
-              <li><a href="#works">WORKS</a></li>
-              <li><a href="#download">BMS Download</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+	<body>
+		<div id="page">
+			<!-- <header>
+				<div class="header">
+					<nav>
+						<ul>
+							<li><a href="#about">Profile</a></li>
+							<li><a href="#discography">Discography</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="#link">Link</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header> -->
 
-      <div id="content">
-        <article id="about">
-          <h1><a herf="#about">ABOUT</a></h1>
-          <p>インターネットの一隅に生きてる或る人。「psychedelic challenge」の公募合格に伴い、音楽活動を徐々に開始。現在、同人音楽など多様な音楽活動をしている。幾多の無機質な「音」から様々な可能性を模索し続けている。</p>
-        </article>
-        
-        <article id="works">
-          <h1><a herf="#works">WORKS</a></h1>
-            <h2><a herf="teikou">RELEASE</a></h2>
-            <p>
-              Single: Behind the dusk Omniset Records 2020<br>
-              EP: Irrelevance Omniset Records 2023<br>
-            </p>
-            <h2><a herf="teikou">提供</a></h2>
-            <p>
-              音ゲー TBA<br>
-              art of heart, wavforme, diverse system など多数<br>
-            </p>
-        </article>
+			<div id="content">
+				<article id="about">
+					<h1>Profile</h1>
+					<p>
+						<h2>Project-G</h2>
+						Music producer / Sound designer <br />
+						Based on Internet
+					</p>
+				</article>
 
-        <article id="BMS Archive">
-          <h1><a herf="download">BMS Archive</a></h1>
-          <div id="bmstable">
-            <table id="mytable">
-              <tbody>
-                <tr>
-                  <th>Title</th>
-                  <th>Year</th>
-                  <th>Genre</th>
-                  <th>Alias</th>
-                  <th>Format</th>
-                  <th>Link</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+				<article id="discography">
+					<h1>Discography</h1>
+					<h2>Full Album</h2>
+					<p>Loneliness and Desire / Omniset Records</p>
 
-        <article id="contact">
-          <h1><a herf="contact">Contact</a></h1>
-          <p><a href="mailto:zako_g@outlook.com">Email</a></p>
-        </article>
+					<h2>EP</h2>
+					<p>
+						Mauve / Omniset Records<br />
+						Irrelevance / Omniset Records
+					</p>
 
-      </div>
+					<h2>Single</h2>
+					<p>Behind the dusk / Omniset Records</p>
+				</article>
 
-      <footer>-</footer>
-    </div>
-  </body>
+				<!-- <article id="BMS Archive">
+					<h1><a href="#download">BMS Archive</a></h1>
+					<div id="bmstable">
+						<table id="mytable">
+							<tbody>
+								<tr>
+									<th>Title</th>
+									<th>Year</th>
+									<th>Genre</th>
+									<th>Alias</th>
+									<th>Format</th>
+									<th>Link</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</article> -->
+
+				<article id="contact">
+					<h1>Contact</h1>
+					<p>
+						<a href="mailto:Project-G.Music@outlook.com">Project-G.Music@outlook.com</a>
+					</p>
+				</article>
+
+				<article id="link">
+					<h1>Link</h1>
+					<ul class="social-links">
+						<li>
+							<a
+								class="social-link"
+								href="https://open.spotify.com/artist/4U8mq4qzFTmLE3qtUFFEI4"
+								aria-label="Project-G on Spotify"
+							>
+								<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+									<circle cx="12" cy="12" r="10"></circle>
+									<path d="M7.2 9.3c3.3-1 7.1-.7 9.8.8"></path>
+									<path d="M7.8 12.1c2.7-.8 5.8-.5 8 .7"></path>
+									<path d="M8.4 14.7c2.1-.6 4.4-.4 6.1.5"></path>
+								</svg>
+								<span class="sr-only">Spotify</span>
+							</a>
+						</li>
+						<li>
+							<a
+								class="social-link"
+								href="https://soundcloud.com/pr_g"
+								aria-label="Project-G on SoundCloud"
+							>
+								<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M4 14.8h13.4a3.1 3.1 0 0 0 0-6.2 4.9 4.9 0 0 0-9.5 1.7 3.8 3.8 0 0 0-1.1-.2A3.1 3.1 0 0 0 4 14.8Z"></path>
+									<path d="M4 12v2.8"></path>
+									<path d="M6.3 10.2v4.6"></path>
+									<path d="M8.6 8.7v6.1"></path>
+									<path d="M10.9 8.3v6.5"></path>
+								</svg>
+								<span class="sr-only">SoundCloud</span>
+							</a>
+						</li>
+						<li>
+							<a class="social-link" href="https://x.com/project___g" aria-label="Project-G on X">
+								<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M5 5l14 14"></path>
+									<path d="M19 5L5 19"></path>
+								</svg>
+								<span class="sr-only">X</span>
+							</a>
+						</li>
+						<li>
+							<a
+								class="social-link"
+								href="https://www.weibo.com/u/2627528013"
+								aria-label="Project-G on Weibo"
+							>
+								<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M5.5 12.3c1.5-2.5 5.3-3.9 8.4-3.1 3.5.9 4.8 3.9 2.9 6.1-2 2.4-6.6 3-9.8 1.4-2.1-1-2.7-2.8-1.5-4.4Z"></path>
+									<path d="M15.3 5.6c2.3.1 4.1 1.7 4.1 3.6"></path>
+									<path d="M16.5 3.4c3.1.3 5.5 2.5 5.5 5.2"></path>
+									<circle cx="10" cy="13.1" r="1.1"></circle>
+									<circle cx="13.2" cy="12.8" r=".8"></circle>
+								</svg>
+								<span class="sr-only">Weibo</span>
+							</a>
+						</li>
+					</ul>
+				</article>
+			</div>
+
+			<footer>-</footer>
+		</div>
+	</body>
 </html>

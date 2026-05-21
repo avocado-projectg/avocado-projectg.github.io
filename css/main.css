@@ -1,0 +1,119 @@
+#page {
+    max-width: 800px;
+    margin: 24px 16px 24px clamp(16px, 12vw, 160px);
+    border: 0px;
+}
+
+hr {
+    border: 1 black;
+}
+
+.header {
+    background-color: rgba(180, 180, 180, 0.6);
+    position: fixed;
+    right: 200px;
+}
+
+.header ul {
+    list-style-type: none;
+}
+
+.header li {
+    display: inline;
+}
+
+.header a {
+    color: black;
+    text-decoration: none;
+    padding: 0px 0px;
+}
+
+.articleFooter {
+    height: 40px;
+    padding: 20px 0px;
+}
+
+#content {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+#content h1 {
+    font-size: 1.2em;
+    line-height: 1.4;
+    margin: 1.6em 0 0.7em;
+}
+
+#content h2 {
+    font-size: 1em;
+    line-height: inherit;
+    margin: 1.1em 0 0.2em;
+}
+
+#content p {
+    margin: 0 0 1em;
+}
+
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-link {
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+    display: inline-flex;
+    height: 36px;
+    justify-content: center;
+    text-decoration: none;
+    width: 36px;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: black;
+    color: white;
+}
+
+.social-icon {
+    fill: none;
+    height: 22px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 22px;
+}
+
+.social-icon circle {
+    fill: none;
+}
+
+.sr-only {
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table {
+    border-collapse: collapse;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 1px 12px;
+    border-bottom: 1px solid black;
+}
