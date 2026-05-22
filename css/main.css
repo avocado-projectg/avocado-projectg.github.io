@@ -41,6 +41,24 @@ a:active {
     margin: 0 0 1em;
 }
 
+.discography-list {
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+.discography-item {
+    margin: 0;
+}
+
+.discography-title {
+    transition: color 220ms ease;
+}
+
+.discography-item:hover .discography-title {
+    color: var(--discography-color);
+}
+
 footer {
     margin-top: 1.6em;
     max-width: 800px;
