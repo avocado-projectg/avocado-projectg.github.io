@@ -1,0 +1,21 @@
+[
+	{
+		"slug": "about-this-page",
+		"title": "About This Page",
+		"date": "2026-05-22",
+		"summary": "A starter article explaining how published Markdown articles are organized."
+	},
+	{
+		"slug": "love",
+		"title": "Love",
+		"date": "2026-05-22",
+		"summary": "Love."
+	},
+	{
+		"slug": "south",
+		"title": "南华内篇参隐",
+		"date": "2026-05-22",
+		"summary": "Note about zhuangzi's inner chapters."
+	}
+]
+

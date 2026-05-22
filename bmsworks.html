@@ -15,55 +15,55 @@
 	<body>
 		<div id="page">
 			<div id="content">
-				<section>
-					<h1>BMS Works</h1>
-					<ul class="work-list">
-						<li>
-							<h2>Corona</h2>
-							<p>Trance / OGG+WMV / <a href="https://drive.google.com/file/d/1HWh6HSiGv6VK90uMJzH5NKp3iRUa9BSq/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>Midnight Flux</h2>
-							<p>Midnight Liquid Juke / OGG+WMV / <a href="https://drive.google.com/file/d/1ulImKUntbH6ijGmEkxcHdi_-jbLDGtY8/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>The Sundering</h2>
-							<p>Upheaval / WAV+WMV / <a href="https://drive.google.com/file/d/1QLJBDgQUGa4vruaX1J7Z_y56dnkqz9s3/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>Theme</h2>
-							<p>G-Bass / OGG+WMV / <a href="https://drive.google.com/file/d/1UwV41iitTwYYKFVi46aL0uB2q_QyO3Yz/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>Aliens are BAD!</h2>
-							<p>Nan-Madol Festival / OGG+WMV / <a href="https://drive.google.com/file/d/1BYAf3vhy2bTpxRxbrpsogoUXlerH0w8o/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>Fake Life</h2>
-							<p>FAKE SKOOL TECHSTEP / OGG+WMV / <a href="https://drive.google.com/file/d/1l9o1Lk1d1szPQNjWqHWeMK9k5OxlZwo0/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>The Observer</h2>
-							<p>absurd crossbreed / OGG+WMV / <a href="https://drive.google.com/file/d/1ZqQRMp1k-yJ0Kc1rdiiFMb2XNgNAUMHC/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>G-Bass</h2>
-							<p>ProjectG / WAV / <a href="https://drive.google.com/file/d/17ShF1V9XyKI1X67axqf3a7DuBBVa2a21/view?usp=sharing">Download</a></p>
-						</li>
-						<li>
-							<h2>Midnight Flux?</h2>
-							<p>ASMR / WAV / <a href="https://drive.google.com/file/d/1bUeCtEgwJ9jdRWSuu8AZysbWZiFUJ_dT/view?usp=sharing">Download</a></p>
-						</li>
-					</ul>
-				</section>
-        <section>
-          <p>
-            Back to <a href="index.html">Homepage</a>.
-          </p>
-        </section>
+				<aside class="site-rail" aria-label="Page navigation">
+					<a class="back-link" href="index.html" aria-label="Back to homepage">↖</a>
+				</aside>
+
+				<main class="site-main">
+					<section>
+						<h1>BMS Works</h1>
+						<ul class="work-list">
+							<li>
+								<a class="work-link" href="#corona" data-work="corona">Corona</a>
+							</li>
+							<li>
+								<a class="work-link" href="#midnight-flux" data-work="midnight-flux">Midnight Flux</a>
+							</li>
+							<li>
+								<a class="work-link" href="#the-sundering" data-work="the-sundering">The Sundering</a>
+							</li>
+							<li>
+								<a class="work-link" href="#theme" data-work="theme">Theme</a>
+							</li>
+							<li>
+								<a class="work-link" href="#aliens-are-bad" data-work="aliens-are-bad">Aliens are BAD!</a>
+							</li>
+							<li>
+								<a class="work-link" href="#fake-life" data-work="fake-life">Fake Life</a>
+							</li>
+							<li>
+								<a class="work-link" href="#the-observer" data-work="the-observer">The Observer</a>
+							</li>
+							<li>
+								<a class="work-link" href="#g-bass" data-work="g-bass">G-Bass</a>
+							</li>
+							<li>
+								<a class="work-link" href="#midnight-flux-asmr" data-work="midnight-flux-asmr">Midnight Flux?</a>
+							</li>
+						</ul>
+					</section>
+				</main>
+
+				<aside class="site-detail" aria-label="Expanded content">
+					<article class="work-detail" id="work-detail" aria-live="polite">
+						<p class="work-status">Select a title to view details.</p>
+					</article>
+				</aside>
 			</div>
 
 			<footer>-</footer>
 		</div>
+
+		<script src="js/bmsworks.js"></script>
 	</body>
 </html>
