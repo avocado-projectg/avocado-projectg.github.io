@@ -41,8 +41,7 @@ a:active {
     min-width: 0;
 }
 
-.site-main,
-.site-detail {
+.site-main {
     max-height: calc(100vh - 72px);
     overflow-y: auto;
     padding-right: 8px;
@@ -105,6 +104,10 @@ a:active {
 
 .discography-link-active .discography-title {
     color: var(--discography-color);
+}
+
+.discography-status {
+    color: #777777;
 }
 
 .release-detail {
@@ -237,7 +240,7 @@ footer {
 }
 
 .article-index li {
-    margin: 0 0 0.8em;
+    margin: 0 0 1.6em;
 }
 
 .article-index-link {

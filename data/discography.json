@@ -1,0 +1,116 @@
+[
+	{
+		"slug": "loneliness-and-desire",
+		"title": "Loneliness and Desire",
+		"category": "Full Album",
+		"year": "2025",
+		"label": "Omniset Records",
+		"comment": "Full Album",
+		"color": "#C93838",
+		"subtitle": "Project-G's 1st Album",
+		"date": "2025-10-26",
+		"cover": "/assets/images/cover_lnd.jpg",
+		"tracks": [
+			"Spark (Intro)",
+			"Bornite",
+			"For No Reason",
+			"Lemma",
+			"Awareness",
+			"Humid Days",
+			"Loneliness and Desire",
+			"Underlined"
+		],
+		"links": [
+			{
+				"label": "dizzylab",
+				"url": "https://www.dizzylab.net/d/OSR0028/"
+			},
+			{
+				"label": "bandcamp",
+				"url": "https://omnisetrecords.bandcamp.com/album/loneliness-and-desire"
+			}
+		]
+	},
+	{
+		"slug": "mauve",
+		"title": "Mauve",
+		"category": "EP",
+		"year": "2024",
+		"label": "Omniset Records",
+		"comment": "EP",
+		"color": "#BA6BAF",
+		"subtitle": "Project-G's 2nd EP",
+		"date": "2024-04-28",
+		"cover": "/assets/images/cover_mauve.jpg",
+		"tracks": [
+			"Kleshas",
+			"Mauve",
+			"It never happens",
+			"Nyolfen - Signals From A Distant Star (Project-G Remix) [Digital Release Exclusive]"
+		],
+		"links": [
+			{
+				"label": "dizzylab",
+				"url": "https://www.dizzylab.net/d/OSR0023/"
+			},
+			{
+				"label": "bandcamp",
+				"url": "https://omnisetrecords.bandcamp.com/album/mauve"
+			}
+		]
+	},
+	{
+		"slug": "irrelevance",
+		"title": "Irrelevance",
+		"category": "EP",
+		"year": "2023",
+		"label": "Omniset Records",
+		"comment": "EP",
+		"color": "#1AA0A1",
+		"subtitle": "Project-G's 1st EP",
+		"date": "2023-04-30",
+		"cover": "/assets/images/cover_irr.jpg",
+		"tracks": [
+			"Irrelevance",
+			"Early Snow",
+			"Celadon",
+			"Irrelevance (Nyolfen Remix)",
+			"Irrelevance (Ninelo Remodel)"
+		],
+		"links": [
+			{
+				"label": "dizzylab",
+				"url": "https://www.dizzylab.net/d/OSR0022/"
+			},
+			{
+				"label": "bandcamp",
+				"url": "https://omnisetrecords.bandcamp.com/album/irrelevance"
+			}
+		]
+	},
+	{
+		"slug": "behind-the-dusk",
+		"title": "Behind the Dusk",
+		"category": "Single",
+		"year": "2019",
+		"label": "Omniset Records",
+		"comment": "Single",
+		"color": "#73808A",
+		"subtitle": "Project-G's 1st Single",
+		"date": "2019-11-21",
+		"cover": "/assets/images/cover_btd.jpg",
+		"tracks": [
+			"Behind the Dusk"
+		],
+		"links": [
+			{
+				"label": "dizzylab",
+				"url": "https://www.dizzylab.net/d/OSR0007/"
+			},
+			{
+				"label": "bandcamp",
+				"url": "https://omnisetrecords.bandcamp.com/track/behind-the-dusk"
+			}
+		]
+	}
+]
