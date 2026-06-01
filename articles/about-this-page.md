@@ -1,9 +1,3 @@
----
-title: About This Page
-date: 2026-05-22
-summary: A starter article explaining how published Markdown articles are organized.
----
-
 # About This Page
 
 This page loads public articles from Markdown files stored in the `articles/` directory.
