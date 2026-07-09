@@ -15,6 +15,7 @@
 	let detailRenderToken = 0;
 	let isInitialReleaseRender = true;
 	let isMainNavigating = false;
+	let currentReleaseSlug = "";
 
 	const windowLoaded = new Promise(function (resolve) {
 		if (document.readyState === "complete") {
@@ -86,6 +87,11 @@
 		Array.from(document.querySelectorAll(".discography-link")).forEach(function (link) {
 			link.addEventListener("click", function (event) {
 				event.preventDefault();
+
+				if (link.dataset.release === currentReleaseSlug) {
+					return;
+				}
+
 				history.replaceState(null, "", "#" + link.dataset.release);
 				renderRelease(link.dataset.release).then(scrollToReleaseDetailOnNarrowPage);
 			});
@@ -424,6 +430,7 @@
 		const hadDetail = Boolean(detailEl.innerHTML);
 		const shouldAnimate = !isInitialReleaseRender && (hadDetail || markup);
 		isInitialReleaseRender = false;
+		currentReleaseSlug = slug;
 
 		function replaceDetail(hideBeforeImageLoad) {
 			if (token !== detailRenderToken) {
