@@ -287,13 +287,18 @@
 
 	function stopPageExitAnimations() {
 		getPageExitElements().forEach(function (element) {
-			if (!element.getAnimations) {
-				return;
-			}
+			element.style.opacity = "";
+			element.style.transform = "";
 
-			element.getAnimations({ subtree: true }).forEach(function (animation) {
-				animation.cancel();
-			});
+			if (element.getAnimations) {
+				element.getAnimations().forEach(function (animation) {
+					animation.cancel();
+				});
+
+				element.getAnimations({ subtree: true }).forEach(function (animation) {
+					animation.cancel();
+				});
+			}
 		});
 	}
 
@@ -506,8 +511,18 @@
 			revealPage();
 		});
 
+	window.addEventListener("pagehide", function () {
+		if (isMainNavigating) {
+			restorePageAfterHistoryReturn();
+		}
+	});
+
 	window.addEventListener("pageshow", function (event) {
-		if (event.persisted) {
+		if (
+			event.persisted ||
+			isMainNavigating ||
+			document.documentElement.classList.contains("is-ready")
+		) {
 			restorePageAfterHistoryReturn();
 		}
 	});
