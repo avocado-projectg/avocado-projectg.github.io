@@ -304,38 +304,45 @@
 		});
 	}
 
+	function fadeElementOut(element, duration, offset) {
+		if (!element) {
+			return Promise.resolve();
+		}
+
+		if (!element.animate) {
+			element.style.opacity = "0";
+			element.style.transform = "translateY(" + offset + "px)";
+			return new Promise(function (resolve) {
+				window.setTimeout(resolve, duration);
+			});
+		}
+
+		const animation = element.animate([
+			{ opacity: 1, transform: "translateY(0)" },
+			{ opacity: 0, transform: "translateY(" + offset + "px)" }
+		], {
+			duration: duration,
+			easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+			fill: "both"
+		});
+
+		return animation.finished.catch(function () {});
+	}
+
 	function animatePageOut() {
 		stopPageExitAnimations();
 		stopMainAnimations();
 		stopDetailAnimations();
 		clearPageExitStyles();
 
-		if (!mainEl.animate) {
-			getPageExitElements().forEach(function (element) {
-				element.style.opacity = "0";
-				element.style.transform = "translateY(8px)";
-			});
+		const hasDetail = Boolean(detailEl && detailEl.innerHTML.trim());
+		const detailFade = hasDetail
+			? fadeElementOut(detailEl, detailTransitionMs + 80, 8)
+			: Promise.resolve();
 
-			return new Promise(function (resolve) {
-				window.setTimeout(resolve, mainTransitionMs);
-			});
-		}
-
-		const animations = getPageExitElements().map(function (element, index) {
-			const animation = element.animate([
-				{ opacity: 1, transform: "translateY(0)" },
-				{ opacity: 0, transform: "translateY(8px)" }
-			], {
-				delay: index * 35,
-				duration: mainTransitionMs + 80,
-				easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-				fill: "both"
-			});
-
-			return animation.finished.catch(function () {});
+		return detailFade.then(function () {
+			return fadeElementOut(mainEl, mainTransitionMs + 90, 8);
 		});
-
-		return Promise.all(animations);
 	}
 
 	function shouldAnimateMainNavigation(event, link) {
