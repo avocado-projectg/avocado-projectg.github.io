@@ -7,6 +7,15 @@
     --site-detail: minmax(320px, 640px);
 }
 
+.is-loading body {
+    opacity: 0;
+}
+
+body {
+    opacity: 1;
+    transition: opacity 180ms ease;
+}
+
 body {
     color: #444444;
     font-family: "Google Sans Flex", Arial, sans-serif;
@@ -42,8 +51,6 @@ a:active {
 }
 
 .site-main {
-    max-height: calc(100vh - 72px);
-    overflow-y: auto;
     padding-right: 8px;
 }
 
@@ -337,7 +344,6 @@ footer {
     max-width: 100%;
 }
 
-
 .social-links {
     display: flex;
     gap: 10px;
@@ -388,8 +394,6 @@ footer {
 
     .site-main,
     .site-detail {
-        max-height: none;
-        overflow-y: visible;
         padding-right: 0;
     }
 
