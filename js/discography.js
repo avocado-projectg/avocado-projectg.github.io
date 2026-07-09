@@ -279,36 +279,63 @@
 		});
 	}
 
-	function stopPageExitAnimations() {
-		if (!contentEl.getAnimations) {
-			return;
-		}
+	function getPageExitElements() {
+		return [mainEl, detailEl].filter(function (element) {
+			return Boolean(element);
+		});
+	}
 
-		contentEl.getAnimations({ subtree: true }).forEach(function (animation) {
-			animation.cancel();
+	function stopPageExitAnimations() {
+		getPageExitElements().forEach(function (element) {
+			if (!element.getAnimations) {
+				return;
+			}
+
+			element.getAnimations({ subtree: true }).forEach(function (animation) {
+				animation.cancel();
+			});
+		});
+	}
+
+	function clearPageExitStyles() {
+		getPageExitElements().forEach(function (element) {
+			element.style.opacity = "";
+			element.style.transform = "";
 		});
 	}
 
 	function animatePageOut() {
-		if (!contentEl.animate) {
+		stopPageExitAnimations();
+		stopMainAnimations();
+		stopDetailAnimations();
+		clearPageExitStyles();
+
+		if (!mainEl.animate) {
+			getPageExitElements().forEach(function (element) {
+				element.style.opacity = "0";
+				element.style.transform = "translateY(8px)";
+			});
+
 			return new Promise(function (resolve) {
 				window.setTimeout(resolve, mainTransitionMs);
 			});
 		}
 
-		stopPageExitAnimations();
-		stopMainAnimations();
-		stopDetailAnimations();
-		const animation = contentEl.animate([
-			{ opacity: 1, transform: "translateY(0)" },
-			{ opacity: 0, transform: "translateY(6px)" }
-		], {
-			duration: mainTransitionMs,
-			easing: "ease",
-			fill: "both"
+		const animations = getPageExitElements().map(function (element, index) {
+			const animation = element.animate([
+				{ opacity: 1, transform: "translateY(0)" },
+				{ opacity: 0, transform: "translateY(8px)" }
+			], {
+				delay: index * 35,
+				duration: mainTransitionMs + 80,
+				easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+				fill: "both"
+			});
+
+			return animation.finished.catch(function () {});
 		});
 
-		return animation.finished.catch(function () {});
+		return Promise.all(animations);
 	}
 
 	function shouldAnimateMainNavigation(event, link) {
@@ -333,7 +360,7 @@
 	}
 
 	function setupMainNavigationAnimation() {
-		Array.from(mainEl.querySelectorAll("a")).forEach(function (link) {
+		Array.from(contentEl.querySelectorAll("a")).forEach(function (link) {
 			link.addEventListener("click", function (event) {
 				if (isMainNavigating || !shouldAnimateMainNavigation(event, link)) {
 					return;
@@ -353,6 +380,7 @@
 		stopPageExitAnimations();
 		stopMainAnimations();
 		stopDetailAnimations();
+		clearPageExitStyles();
 		document.documentElement.classList.remove("is-loading");
 		document.documentElement.classList.add("is-ready");
 	}
