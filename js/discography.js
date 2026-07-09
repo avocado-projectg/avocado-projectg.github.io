@@ -4,6 +4,7 @@
 	const discographyUrl = "data/discography.json";
 	const listEl = document.querySelector("#discography-list");
 	const detailEl = document.querySelector("#release-detail");
+	const contentEl = document.querySelector("#content");
 	const mainEl = document.querySelector(".site-main");
 	const narrowPageQuery = window.matchMedia("(max-width: 720px)");
 	const detailTransitionMs = 220;
@@ -278,15 +279,27 @@
 		});
 	}
 
-	function animateMainOut() {
-		if (!mainEl.animate) {
+	function stopPageExitAnimations() {
+		if (!contentEl.getAnimations) {
+			return;
+		}
+
+		contentEl.getAnimations({ subtree: true }).forEach(function (animation) {
+			animation.cancel();
+		});
+	}
+
+	function animatePageOut() {
+		if (!contentEl.animate) {
 			return new Promise(function (resolve) {
 				window.setTimeout(resolve, mainTransitionMs);
 			});
 		}
 
+		stopPageExitAnimations();
 		stopMainAnimations();
-		const animation = mainEl.animate([
+		stopDetailAnimations();
+		const animation = contentEl.animate([
 			{ opacity: 1, transform: "translateY(0)" },
 			{ opacity: 0, transform: "translateY(6px)" }
 		], {
@@ -328,11 +341,20 @@
 
 				event.preventDefault();
 				isMainNavigating = true;
-				animateMainOut().then(function () {
+				animatePageOut().then(function () {
 					window.location.href = link.href;
 				});
 			});
 		});
+	}
+
+	function restorePageAfterHistoryReturn() {
+		isMainNavigating = false;
+		stopPageExitAnimations();
+		stopMainAnimations();
+		stopDetailAnimations();
+		document.documentElement.classList.remove("is-loading");
+		document.documentElement.classList.add("is-ready");
 	}
 
 	function scrollToReleaseDetailOnNarrowPage() {
@@ -448,4 +470,10 @@
 			detailEl.innerHTML = "";
 			revealPage();
 		});
+
+	window.addEventListener("pageshow", function (event) {
+		if (event.persisted) {
+			restorePageAfterHistoryReturn();
+		}
+	});
 }());
